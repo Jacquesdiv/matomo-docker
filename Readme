@@ -1,0 +1,9 @@
+To build the image run 
+`
+docker build -t matomo .
+`
+
+To run the image run
+`
+docker run -d  -e MATOMO_DATABASE_HOST=host.docker.internal  -e MATOMO_DATABASE_ADAPTER=MYSQL  -e MATOMO_DATABASE_USERNAME=root  -e MATOMO_DATABASE_PASSWORD=qwerty  -e MATOMO_DATABASE_DBNAME=matomo -e CC_PATH=/workspace/mnt/test -p 8001:80 -v matomo:/workspace/mnt/test --name matomo matomo
+`
